@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Guide</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- remixicon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+</head>
+
+<body>
+    <section class="container">
+        <h1 class="title">Country Guide</h1>
+        <div class="basic-card">
+            <form action="">
+                <div class="input-div">
+                    <input type="text" placeholder="Search Country" class="input">
+
+                    <button class="search-btn"><i class=' ri-search-eye-line'></i></button>
+
+                    <input type="submit" class="submit-btn">
+                </div>
+            </form>
+
+            <div class="basic-content hide">
+                <img src="https://cdn.britannica.com/67/6267-050-8A26DFEE/Flag-Bangladesh.jpg?w=400&h=300&c=crop"
+                    alt="flag" class="flag">
+                <h2 class="name" id="name">Bangladesh</h2>
+
+                <div class="basic-text">
+                </div>
+
+                <div class="basic-btn">
+                    <a href="#more">More Info</a>
+                    <a href="#geo">Geography</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="geo basic-card" id="geo">
+            <h3 class="card-title">// Geography</h3>
+            <div class="geo-text"></div>
+        </div>
+
+        <div class="more basic-card" id="more">
+            <h3 class="card-title">// More Info</h3>
+            <div class="more-text"></div>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+
+</html>
+<!-- https://cdn.britannica.com/67/6267-050-8A26DFEE/Flag-Bangladesh.jpg?w=400&h=300&c=crop -->
