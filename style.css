@@ -154,3 +154,9 @@ footer {
 .error {
     display: none;
 }
+
+.coat {
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+}

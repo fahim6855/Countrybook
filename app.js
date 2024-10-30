@@ -115,6 +115,12 @@ async function showData(countryName) {
         <span class="key">Official Name : </span>
         <span class="value">${data[0].name.official}</span>
     </p>
+
+    <p class="card-p">
+        <span class="key">Coat Of Arms : </span>
+        <img src="${data[0].coatOfArms.png}" alt="Coat Of Arms" class="coat">
+    </p>
+
         `
 
         // changing display divs 
