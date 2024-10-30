@@ -97,6 +97,25 @@ async function showData(countryName) {
         <span class="value"><a href="${data[0].maps.googleMaps}" target="blank">Click here</a></span>
     </p>
 `
+        moreText.innerHTML = `
+        <p class="card-p">
+        <span class="key">Car Side : </span>
+        <span class="value">${data[0].car.side}</span>
+    </p>
+    <p class="card-p">
+        <span class="key">Timezone : </span>
+        <span class="value">${data[0].timezones[0]}</span>
+    </p>
+    <p class="card-p">
+        <span class="key">Top Level Domain : </span>
+        <span class="value">
+        ${data[0].tld[0]}</span>
+    </p>
+    <p class="card-p">
+        <span class="key">Official Name : </span>
+        <span class="value">${data[0].name.official}</span>
+    </p>
+        `
 
         // changing display divs 
         errorDiv.style.display = "none";
