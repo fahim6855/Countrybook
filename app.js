@@ -8,19 +8,32 @@ let basicText = document.querySelector(".basic-text");
 let inputElm = document.querySelector(".input");
 let geoText = document.querySelector(".geo-text");
 let moreText = document.querySelector(".more-text");
+let errorDiv = document.querySelector(".error");
+let hideDiv = document.querySelectorAll(".hide");
 
 async function showData(countryName) {
     let URL = `https://restcountries.com/v3.1/name/${countryName}`;
     let response = await fetch(URL);
-    let data = await response.json();
 
-    let CurrencyCode = Object.keys(data[0].currencies)[0];
-    let currencyName = data[0].currencies[CurrencyCode];
-    let lang = data[0].languages
+    if (response.status == 404) {
+        console.log("Invalid City Name");
+        errorDiv.style.display = "block";
 
-    flagElm.src = data[0].flags.png;
-    nameElm.innerHTML = data[0].name.common;
-    basicText.innerHTML = `
+        hideDiv.forEach(n => {
+            n.classList.add("hideDiv")
+        })
+    }
+
+    else {
+        let data = await response.json();
+
+        let CurrencyCode = Object.keys(data[0].currencies)[0];
+        let currencyName = data[0].currencies[CurrencyCode];
+        let lang = data[0].languages
+
+        flagElm.src = data[0].flags.png;
+        nameElm.innerHTML = data[0].name.common;
+        basicText.innerHTML = `
 
                     <p class="card-p">
                         <span class="key">Capital : </span>
@@ -50,7 +63,7 @@ async function showData(countryName) {
                     </p>
     `
 
-    geoText.innerHTML = `
+        geoText.innerHTML = `
 
     <p class="card-p">
         <span class="key">Region : </span>
@@ -85,12 +98,16 @@ async function showData(countryName) {
     </p>
 `
 
-    // lang = data[0].languages
+        // changing display divs 
+        errorDiv.style.display = "none";
 
-    // console.log(Object.values(lang).toString())
+        hideDiv.forEach(n => {
+            n.classList.remove("hideDiv")
+        })
+    }
 }
 
-showData("usa");
+showData("nepal");
 searchBTn.addEventListener("click", (event) => {
     event.preventDefault();
     showData(inputElm.value);

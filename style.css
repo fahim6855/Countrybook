@@ -146,3 +146,11 @@ footer {
     text-align: center;
     color: white;
 }
+
+.hideDiv {
+    display: none;
+}
+
+.error {
+    display: none;
+}
