@@ -112,9 +112,14 @@ async function showData(countryName) {
         ${data[0].tld[0]}</span>
     </p>
     <p class="card-p">
+    <span class="key">Dial Code : </span>
+    <span class="value">${data[0].idd.root}${data[0].idd.suffixes[0]}</span>
+    </p>
+    <p class="card-p">
         <span class="key">Official Name : </span>
         <span class="value">${data[0].name.official}</span>
     </p>
+
 
     <p class="card-p">
         <span class="key">Coat Of Arms : </span>
@@ -129,6 +134,7 @@ async function showData(countryName) {
         hideDiv.forEach(n => {
             n.classList.remove("hideDiv")
         })
+        console.log(data[0].idd)
     }
 }
 
